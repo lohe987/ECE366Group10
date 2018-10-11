@@ -1,0 +1,79 @@
+0000                    
+0001    00                ;  DATA
+0002    00                ;  DATA
+0003                    
+0004    00                ;  DATA
+0005                    
+0006                    
+0007    00                ;  DATA
+0008    00                ;  DATA
+0009                    
+000A    00                ;  DATA
+000B    00                ;  DATA
+000C                    
+000D                    
+000E                    
+000F                    
+0010    00                ;  DATA
+0011                    
+0012    00                ;  DATA
+0013    08                ;  DATA
+0014                    
+0015                    
+0016                    
+
+; loop:                   
+0017                    
+0018                    
+0019                    
+001A                    
+001B                    
+001C                    
+001D                    
+001E                    
+
+; bypass:                 
+001F                    
+0020                    
+0021                    
+0022                    
+0023                    
+
+; no_match_found:         
+0024                    
+0025                    
+
+; get_max:                
+0026                    
+0027                    
+0028    00                ;  DATA
+0029                    
+002A                    
+002B                    
+002C    00                ;  DATA
+002D    00                ;  DATA
+002E    00                ;  DATA
+002F    00                ;  DATA
+0030    00                ;  DATA
+
+; find_distance_score:    
+0031                    
+0032                    
+0033                    
+
+; find_distance_score_loop:
+0034                    
+0035    00                ;  DATA
+0036                    
+0037                    
+0038                    
+0039                    
+003A                    
+003B                    
+003C                    
+
+; find_distance_score_exit:
+003D                    
+003E                    
+003F                    
+0040            
