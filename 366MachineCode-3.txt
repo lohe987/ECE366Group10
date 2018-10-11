@@ -1,0 +1,78 @@
+﻿Machine Code
+Program 1:
+
+
+.data 0x0000
+P:                 .word         1005
+R:                 .word         1
+B:                .word        6
+MOD:                .word        17
+
+
+P = mem[0]
+R = mem[1]
+B = mem[2]
+MOD = mem[3]
+
+
+001 10 00        #P stored into r2
+001 11 01        #R stored into r3
+000 00 10         #r0 = P
+000 01 11        #r1 = R
+001 10 10        #B stored into r2
+001 11 11        #MOD stored into r3
+001 00 01        #sub p=p-1
+
+
+Loop_chk:
+100 00 00        #beq p =0
+110 11 01        #jump 5 used in beq to jump to store_result
+
+
+111 11 10        #jal 6 used to jump to multiply_base
+
+
+111 11 11        #jal 7
+111 11 10        #jal 6 this line and line before will jump to base_mod
+
+001 00 01        #sub p=p-1
+110 11 11        #jump 7
+110 11 11        #jump 7
+110 10 10        #jump 2 these 3 jump lines are used to loop back to loop_chk
+
+
+Store_result:
+011 00 01        #mem[0] = 0 
+
+
+Halt:
+110 10 00        #jump 0
+
+
+
+
+Multiply_base:
+001 00 01        #subtract P-1
+110 01 00        #xor
+110 01 10        #xor
+
+
+Multiply_base_loop:
+000 01 23
+001 00 01        #subtract P-1
+100 11 11
+111 01 11        #jump register 7
+
+
+Base_mod:
+010 10 11        #slt b<mod
+100 00 01        #beq r2 = 1
+110 10 11        #jumps to base_mod_exit when beq is true
+001 01 11        #sub B - mod
+110 11 11        #jump 7
+110 11 11        #jump 7
+110 10 01        #jump 1 these 3 jumps are used to jump back to base_mod
+
+
+Base_mod_exit:
+111 01 11        #jump register 7
